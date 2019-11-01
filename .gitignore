@@ -14,7 +14,6 @@
 *.iws
 *.iml
 *.ipr
-*.gitkeep
 
 ### NetBeans ###
 /nbproject/private/

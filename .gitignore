@@ -14,6 +14,7 @@
 *.iws
 *.iml
 *.ipr
+*.gitkeep
 
 ### NetBeans ###
 /nbproject/private/
@@ -23,3 +24,4 @@
 /nbdist/
 /.nb-gradle/
 /.idea/inspectionProfiles/
+

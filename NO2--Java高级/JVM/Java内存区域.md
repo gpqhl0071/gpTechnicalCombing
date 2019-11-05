@@ -31,15 +31,15 @@
 
 参考：[https://github.com/Snailclimb/JavaGuide/blob/master/docs/java/jvm/Java%E5%86%85%E5%AD%98%E5%8C%BA%E5%9F%9F.md](https://github.com/Snailclimb/JavaGuide/blob/master/docs/java/jvm/Java%E5%86%85%E5%AD%98%E5%8C%BA%E5%9F%9F.md)
 
-# Java Stacks
+# jvm Stacks
 
 Java 内存可以粗糙的区分为**堆内存（Heap）和栈内存
 (Stack)**,其中栈就是现在说的虚拟机栈，或者说是虚拟机栈中局部变量表部分。
 （实际上，Java
 虚拟机栈是由一个个栈帧组成，而**每个栈帧中都拥有：局部变量表、操作数栈、动态链接、方法出口信息**。）
 
-局部变量表主要存放了编译器可知的各种数据类型**（boolean、byte、char、short、int、float、long、double）、对象引用（reference
-类型**，它不同于对象本身，可能是一个指向对象起始地址的引用指针，也可能是指向一个代表对象的句柄或其他与此对象相关的位置）。
+局部变量表主要存放了编译器可知的各种数据类型**（boolean、byte、char、short、int、float、long、double）、对象引用**（reference
+类型，它不同于对象本身，可能是一个指向对象起始地址的引用指针，也可能是指向一个代表对象的句柄或其他与此对象相关的位置）。
 
 Java 虚拟机栈会出现两种异常：StackOverFlowError 和 OutOfMemoryError。
 

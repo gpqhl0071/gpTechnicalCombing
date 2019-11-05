@@ -20,9 +20,9 @@ CopyOnWriteArrayList 类的所有可变操作（add，set等等）都是通过�
 
 # 3. ConcurrentLinkedQueue
 
-Java提供的线程安全的 Queue 可以分为阻塞队列和非阻塞队列，其中阻塞队列的典型例子是 BlockingQueue，非阻塞队列的典型例子是ConcurrentLinkedQueue，在实际应用中要根据实际需要选用阻塞队列或者非阻塞队列。 阻塞队列可以通过加锁来实现，非阻塞队列可以通过 CAS 操作实现。
+Java提供的线程安全的 Queue 可以分为阻塞队列和非阻塞队列，其中`阻塞队列`的典型例子是 BlockingQueue，`非阻塞队列`的典型例子是ConcurrentLinkedQueue，在实际应用中要根据实际需要选用阻塞队列或者非阻塞队列。 阻塞队列可以通过加锁来实现，非阻塞队列可以通过 CAS 操作实现。
 
-从名字可以看出，ConcurrentLinkedQueue这个队列使用链表作为其数据结构．ConcurrentLinkedQueue 应该算是在高并发环境中性能最好的队列了。它之所有能有很好的性能，是因为其内部复杂的实现。
+从名字可以看出，ConcurrentLinkedQueue这个队列使用链表作为其数据结构．ConcurrentLinkedQueue 应该算是在`高并发环境中性能最好的队列了`。它之所有能有很好的性能，是因为其内部复杂的实现。
 
 ConcurrentLinkedQueue 内部代码我们就不分析了，大家知道ConcurrentLinkedQueue 主要使用 CAS 非阻塞算法来实现线程安全就好了。
 
@@ -31,7 +31,7 @@ ConcurrentLinkedQueue 适合在对性能要求相对较高，同时对队列的�
 
 # 4. BlockingQueue
 
-上面我们己经提到了 ConcurrentLinkedQueue 作为高性能的非阻塞队列。下面我们要讲到的是阻塞队列——BlockingQueue。阻塞队列（BlockingQueue）被广泛使用在“生产者-消费者”问题中，其原因是BlockingQueue提供了可阻塞的插入和移除的方法。当队列容器已满，生产者线程会被阻塞，直到队列未满；当队列容器为空时，消费者线程会被阻塞，直至队列非空时为止。
+上面我们己经提到了 ConcurrentLinkedQueue 作为高性能的`非阻塞队列`。下面我们要讲到的是`阻塞队列`——BlockingQueue。阻塞队列（BlockingQueue）被广泛使用在“生产者-消费者”问题中，其原因是BlockingQueue提供了可阻塞的插入和移除的方法。当队列容器已满，生产者线程会被阻塞，直到队列未满；当队列容器为空时，消费者线程会被阻塞，直至队列非空时为止。
 
 
 ## 4.1 ArrayBlockingQueue
@@ -51,3 +51,24 @@ PriorityBlockingQueue 是一个支持优先级的无界阻塞队列。默认情�
 PriorityBlockingQueue 并发控制采用的是 ReentrantLock，队列为无界队列（ArrayBlockingQueue 是有界队列，LinkedBlockingQueue 也可以通过在构造函数中传入 capacity 指定队列最大的容量，但是 PriorityBlockingQueue 只能指定初始的队列大小，后面插入元素的时候，如果空间不够的话会自动扩容）。
 
 简单地说，它就是 PriorityQueue 的线程安全版本。不可以插入 null 值，同时，插入队列的对象必须是可比较大小的（comparable），否则报 ClassCastException 异常。它的插入操作 put 方法不会 block，因为它是无界队列（take 方法在队列为空的时候会阻塞）。
+
+# 5. ConcurrentSkipListMap
+
+跳表的本质是同时维护了多个链表，并且链表是分层的，
+
+![1.png](http://ww1.sinaimg.cn/large/9b13c8fdly1g8n4b34wqij20nv0d8wif.jpg)
+
+
+`最低层的链表`维护了跳表内所有的元素，每上面一层链表都是下面一层的子集。
+
+跳表内的所有链表的元素都是排序的。查找时，可以从顶级链表开始找。一旦发现被查找的元素大于当前链表中的取值，就会转入下一层链表继续找。这也就是说在查找过程中，搜索是跳跃式的。如上图所示，在跳表中查找元素18。
+
+
+![2.png](http://ww1.sinaimg.cn/large/9b13c8fdly1g8n4bgmbm3j20nt0dhte5.jpg)
+
+
+查找18 的时候原来需要遍历 18 次，现在只需要 7 次即可。针对链表长度比较大的时候，构建索引查找效率的提升就会非常明显。
+
+从上面很容易看出，跳表是一种利用空间换时间的算法。
+
+使用跳表实现Map 和使用哈希算法实现Map的另外一个不同之处是：哈希并不会保存元素的顺序，`而跳表内所有的元素都是排序的`。因此在对跳表进行遍历时，你会得到一个有序的结果。所以，如果你的应用需要有序性，那么跳表就是你不二的选择。JDK 中实现这一数据结构的类是ConcurrentSkipListMap。

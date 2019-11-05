@@ -50,3 +50,7 @@ class Test2 {
 ```
 
 从上面的例子中我们可以看出：使用AtomicInteger是非常的安全的.而且因为AtomicInteger由硬件提供原子操作指令实现的。在非激烈竞争的情况下，开销更小，速度更快。
+
+参考：[https://blog.csdn.net/u013063153/article/details/70332793](https://blog.csdn.net/u013063153/article/details/70332793)
+
+

@@ -35,7 +35,7 @@ class Test2 {
 
 使用AtomicInteger:
 
-```
+```java
 class Test2 {
         private AtomicInteger count = new AtomicInteger();
  

@@ -9,7 +9,7 @@ JDK提供的这些容器大部分在 `java.util.concurrent` 包中
 
 # 1. ConcurrentHashMap 
 
-- [ConcurrentHashMap和Hashtable](NO2--Java高级/容器/ConcurrentHashMap和Hashtable.md)
+- [ConcurrentHashMap和Hashtable](/NO2--Java高级/容器/ConcurrentHashMap和Hashtable.md)
 
 # 2. CopyOnWriteArrayList  
 

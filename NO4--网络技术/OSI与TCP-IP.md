@@ -1,4 +1,7 @@
 
+![5.png](http://ww1.sinaimg.cn/large/9b13c8fdly1g8qrxrxer8j20le0kcjuj.jpg)
+
+!(图片来源)[https://community.fs.com/blog/tcpip-vs-osi-whats-the-difference-between-the-two-models.html]
 
 **OSI体系结构** ： 七层协议 
 

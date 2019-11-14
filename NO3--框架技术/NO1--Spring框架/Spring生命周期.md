@@ -26,3 +26,5 @@
 - **ServletConfigAware**： 在一个MVC应用中可以获取ServletConfig对象，可以读取config中的参数。
 
 [更多参考](https://github.com/Snailclimb/JavaGuide/blob/master/docs/system-design/framework/spring/SpringBean.md)
+
+[Using Spring Aware Interfaces](https://springframework.guru/using-spring-aware-interfaces/)

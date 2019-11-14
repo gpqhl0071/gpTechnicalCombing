@@ -12,3 +12,6 @@ MVC 是一种设计模式,Spring MVC 是一款很优秀的 MVC 框架。Spring M
 1. 把 View 返回给请求者（浏览器）
 
 [更多参考](https://github.com/Snailclimb/JavaGuide/blob/master/docs/system-design/framework/spring/SpringInterviewQuestions.md)
+
+[How Spring MVC Framework works? How HTTP Request is processed?](https://javarevisited.blogspot.com/2017/06/how-spring-mvc-framework-works-web-flow.html)
+

@@ -1,5 +1,6 @@
 # 个人技术梳理
-My own technical knowledge
+
+针对个人使用到技术的整理，大部分内容为收集网上资料。更多内容还在持续整理中。
 
 - [NO1--Java基础](NO1--Java基础)
   - [==与equals.md](NO1--Java基础//==与equals.md)

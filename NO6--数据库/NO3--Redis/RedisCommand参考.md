@@ -1,0 +1,15 @@
+# 基础命令
+
+- [Redis - Commands](https://www.tutorialspoint.com//redis/redis_commands.htm)
+- [Redis - Keys](https://www.tutorialspoint.com//redis/redis_keys.htm)
+- [Redis - Strings](https://www.tutorialspoint.com//redis/redis_strings.htm)
+- [Redis - Hashes](https://www.tutorialspoint.com//redis/redis_hashes.htm)
+- [Redis - Lists](https://www.tutorialspoint.com//redis/redis_lists.htm)
+- [Redis - Sets](https://www.tutorialspoint.com//redis/redis_sets.htm)
+- [Redis - Sorted Sets](https://www.tutorialspoint.com//redis/redis_sorted_sets.htm)
+- [Redis - HyperLogLog](https://www.tutorialspoint.com//redis/redis_hyperloglog.htm)
+- [Redis - Publish Subscribe](https://www.tutorialspoint.com//redis/redis_pub_sub.htm)
+- [Redis - Transactions](https://www.tutorialspoint.com//redis/redis_transactions.htm)
+- [Redis - Scripting](https://www.tutorialspoint.com//redis/redis_scripting.htm)
+- [Redis - Connections](https://www.tutorialspoint.com//redis/redis_connection.htm)
+- [Redis - Server](https://www.tutorialspoint.com//redis/redis_server.htm)

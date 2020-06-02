@@ -1,4 +1,4 @@
-![gp](../doc/GP.jpg)
+![gp](/doc/GP.jpg)
 
 
 # 个人技术梳理
